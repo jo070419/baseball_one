@@ -1,0 +1,21 @@
+<header>
+  <div class="title">
+    <div class="logo">
+       BASEBALL ONE
+    </div>
+  </div>
+  <nav class="nav">
+  <% if user_signed_in? %>
+    <ul class="menu-group">
+      <li class="menu-item"><%= link_to current_user.nickname, "#" %>
+      <li class="menu-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      <li class="menu-item"><%= link_to '募集する', new_recruitment_path %></li>
+    </ul>
+  <% else %>
+    <ul class="menu-group">
+        <li class="menu-item"><%= link_to 'ログイン', new_user_session_path %></li>
+        <li class="menu-item"><%= link_to '新規登録', new_user_registration_path %></li>
+    </ul>
+  <% end %>
+  </nav>
+</header>
