@@ -1,0 +1,43 @@
+<div>
+  <%= @recruitment.title %>
+</div>
+<div>
+  <%= @recruitment.category.name %>
+</div>
+<div>
+  <%= @recruitment.prefecture.name %>
+</div>
+<div>
+  <%= @recruitment.municipality %>
+</div>
+<div>
+  <%= @recruitment.locate %>
+</div>
+<div>
+  <%= @recruitment.ground %>
+</div>
+<div>
+  <%= @recruitment.date %>
+</div>
+<div>
+  <%= @recruitment.start_time.name %>
+</div>
+<div>
+  <%= @recruitment.end_time.name %>
+</div>
+<div>
+  <%= @recruitment.dead_line %>
+</div>
+<div>
+  <%= @recruitment.recruit_text %>
+</div>
+<div>
+<% if current_user == @recruitment.user %>
+  <%= link_to "編集", edit_recruitment_path(@recruitment.id) %>
+  <%= link_to "削除", recruitment_path(@recruitment.id), method: :delete %>
+<% elsif user_signed_in? %>
+  <%= link_to "応募する", "#" %>
+<% else %>
+<% end %>
+  <%= link_to 'トップへ戻る', root_path %>
+</div>

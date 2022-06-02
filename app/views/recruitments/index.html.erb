@@ -1,0 +1,21 @@
+<%= render "shared/header" %>
+募集一覧
+<% @recruitments.each do |recruitment| %>
+  <%= link_to recruitment_path(recruitment.id) do %>
+    <div>
+      <%= recruitment.title %>
+    </div>
+    <div>
+      <%= recruitment.date %>
+    </div>
+    <div>
+      <%= recruitment.prefecture.name %>
+    </div>
+    <div>
+      <%= recruitment.dead_line %>
+    </div>
+    <div>
+      <%= recruitment.user.nickname %>
+    </div>
+  <% end %>
+<% end %>
